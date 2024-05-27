@@ -30,23 +30,28 @@ To set up the project on your local machine, follow these steps:
    ```sh
    git clone https://github.com/surftijmen/GS-preprocessor.git
    cd GS-preprocessor
+   ```
 
 2. **Create a virtual environment**:
    ```sh
    python -m venv venv
+   ```
 
 3. **Activate the virtual environment**:
   - On Windows:
-    `sh
-    venv\Scripts\activate`
+    ```sh
+    venv\Scripts\activate
+    ```
     
   - On macOS/Linux:
-  `sh
-  source venv/bin/activate`
+  ```sh
+  source venv/bin/activate
+```
 
 4. **Install the required dependencies**
-`sh
-pip install -r requirements.txt`
+```sh
+pip install -r requirements.txt
+```
 
 ## Usage
 
@@ -54,7 +59,7 @@ pip install -r requirements.txt`
    Use the provided scripts to preprocess your images. You can adjust parameters such as blur intensity and noise level as needed.
 
 2. **Run the scripts**:
-   `sh python main.py`
+   ```sh python main.py```
 
 ## Contributing
 Contributions are welcome! If you have any ideas, suggestions, or bug reports, please open an issue or submit a pull request.
