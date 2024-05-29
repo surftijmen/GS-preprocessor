@@ -2,12 +2,12 @@ from PIL import Image
 import numpy as np
 
 # Load images
-originalImage = Image.open("color-input/original.png")
+originalImage = Image.open("color-input/normal.png")
 recolouredImage = Image.open("color-input/color.png")
 
 # Ensure both images are in RGB mode
-originalImage = originalImage.convert("RGB")
-recolouredImage = recolouredImage.convert("RGB")
+originalImage = originalImage.convert("RGBA")
+recolouredImage = recolouredImage.convert("RGBA")
 
 # Get numpy arrays
 arrayOriginal = np.array(originalImage)

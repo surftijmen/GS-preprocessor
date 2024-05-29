@@ -2,7 +2,7 @@ from PIL import Image
 import os
 
 # Define the input and output directories
-input_dir = 'input'
+input_dir = 'blur-input'
 output_dir = 'output'
 
 # Ensure the output directory exists
