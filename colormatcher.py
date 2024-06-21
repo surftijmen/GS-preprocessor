@@ -3,9 +3,9 @@ from color_matcher.io_handler import load_img_file, save_img_file, FILE_EXTS
 from color_matcher.normalizer import Normalizer
 import os
 
-img_ref = load_img_file('blur-input/normal n.png')
+img_ref = load_img_file('comparison-input/original.png')
 
-src_path = 'color-input'
+src_path = 'comparison-input'
 filenames = [os.path.join(src_path, f) for f in os.listdir(src_path)
                      if f.lower().endswith(FILE_EXTS)]
 

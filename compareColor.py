@@ -4,16 +4,16 @@ from skimage.metrics import structural_similarity as ssim
 from skimage.color import rgb2lab, deltaE_cie76
 
 # Load images
-original = cv2.imread('comparison-input/normal.png')
-recolored1 = cv2.imread('comparison-input/color.png')
-recolored2 = cv2.imread('comparison-input/outputColor.png')
-recolored3 = cv2.imread('comparison-input/recolored.png')
+original = cv2.imread('comparison-input/original.png')
+recolored1 = cv2.imread('comparison-input/colored.png')
+recolored2 = cv2.imread('comparison-input/recolored.png')
+recolored3 = cv2.imread('comparison-input/original.png')
 
 # Convert images to LAB color space for Delta E calculation
 original_lab = cv2.cvtColor(original, cv2.COLOR_BGR2LAB)
 recolored1_lab = cv2.cvtColor(recolored1, cv2.COLOR_BGR2LAB)
 recolored2_lab = cv2.cvtColor(recolored2, cv2.COLOR_BGR2LAB)
-recolored3_lab = cv2.cvtColor(recolored3, cv2.COLOR_BGR2LAB)
+recolored3_lab = cv2.cvtColor(original, cv2.COLOR_BGR2LAB)
 
 # Calculate Delta E
 delta_e1 = np.mean(deltaE_cie76(original_lab, recolored1_lab))

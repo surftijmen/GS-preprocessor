@@ -8,7 +8,7 @@ from scipy.signal import convolve2d as conv2
 rng = np.random.default_rng()
 
 # Load your own image
-image_path = 'input/blur.png'  # Update this to the correct path
+image_path = 'blur-input/blur.png'  # Update this to the correct path
 image = Image.open(image_path).convert('L')  # Convert to grayscale
 astro = np.array(image)
 

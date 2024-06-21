@@ -2,8 +2,8 @@ from PIL import Image
 import os
 
 # Define the input and output directories
-input_dir = 'blur-input'
-output_dir = 'output'
+input_dir = 'chair'
+output_dir = 'chair1'
 
 # Ensure the output directory exists
 os.makedirs(output_dir, exist_ok=True)
@@ -27,18 +27,22 @@ for filename in os.listdir(input_dir):
         # Crop the image to a square
         img = img.crop((left, top, right, bottom))
 
-        # Now crop the middle 800x800 pixels
-        final_side = 800
-        left = (new_side - final_side) // 2
-        top = (new_side - final_side) // 2
-        right = (new_side + final_side) // 2
-        bottom = (new_side + final_side) // 2
+        # Remove 10% from the right and 10% from the bottom
+        remove_percentage = 0.10
+        new_width = int(img.width * (1 - remove_percentage))
+        new_height = int(img.height * (1 - remove_percentage))
 
-        # Ensure the image is at least 800x800 before cropping
-        if new_side >= final_side:
-            img = img.crop((left, top, right, bottom))
-        else:
-            print(f"Image {filename} is smaller than 800x800 and cannot be cropped further.")
+        # Ensure the new dimensions are the same to keep it square
+        new_side = min(new_width, new_height)
+
+        # Calculate new cropping coordinates
+        left = 0
+        top = 0
+        right = left + new_side
+        bottom = top + new_side
+
+        # Crop the image again to get the final result
+        img = img.crop((left, top, right, bottom))
 
         # Save the cropped image to the output directory
         output_path = os.path.join(output_dir, filename)

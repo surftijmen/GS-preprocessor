@@ -2,11 +2,11 @@ from PIL import Image
 import numpy as np
 
 # Load images
-originalImage = Image.open("color-input/normal.png")
-recolouredImage = Image.open("color-input/color.png")
+originalImage = Image.open("chair/000.png")
+recolouredImage = Image.open("chair/051.png")
 
 # Ensure both images are in RGB mode
-originalImage = originalImage.convert("RGBA")
+originalImage = originalImage.convert("RGBA")         
 recolouredImage = recolouredImage.convert("RGBA")
 
 # Get numpy arrays
@@ -26,5 +26,5 @@ arrayOutput = np.clip(arrayOutput, 0, 255).astype(np.uint8)
 outputImage = Image.fromarray(arrayOutput)
 
 # Save and show the tinted image
-path = "output/outputColor.png"
+path = "output/chair.png"
 outputImage.save(path)
