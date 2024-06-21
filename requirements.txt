@@ -2,6 +2,8 @@ numpy
 pylops
 matplotlib
 scikit-image
+opencv-python
+
 color_matcher
 pillow
 scipy==1.12.0
