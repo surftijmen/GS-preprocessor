@@ -1,0 +1,8 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+authors:
+  - family-names: Meijer
+    given-names: Tijmen
+title: "How can we reduce the effect of noise on 3D Gaussian Splats?"
+version: 1.0.0
+date-released: 2024-06-24
